@@ -1,0 +1,263 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap');
+
+:root{
+  --Soft-orange: hsl(35, 77%, 62%);
+  --Soft-red: hsl(5, 85%, 63%);
+  --Off-white: hsl(36, 100%, 99%);
+  --Grayish-blue: hsl(233, 8%, 79%);
+  --Dark-grayish-blue: hsl(236, 13%, 42%);
+  --Very-dark-blue: hsl(240, 100%, 5%);
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: "Inter", sans-serif;
+  font-size: 15px;
+  // font-weight: 400, 700, 800;
+  margin: 1rem;
+  background-color: var(--Off-white);
+}
+
+// Slide navigation bar
+$color_1: black;
+$color_2: #818181;
+$background-color_1: rgb(255,255,255);
+$background-color_2: rgba(255,255,255, 1);
+
+header{
+  width: 100%;
+  .overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: $background-color_1;
+    background-color: $background-color_2;
+    overflow-x: hidden;
+    transition: 0.5s;
+    a {
+      padding: 8px;
+      text-decoration: none;
+      text-align: left;
+      margin-left: 1rem;
+      font-size: 36px;
+      color: $color_1;
+      display: block;
+      transition: 0.3s;
+      &:hover {
+        color: $color_2;
+      }
+      &:focus {
+        color: $color_2;
+      }
+    }
+    .closebtn {
+      position: absolute;
+      top: 5px;
+      right: 15px;
+      font-size: 60px;
+    }
+  }
+  .overlay-content {
+    position: relative;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+  }
+  .flex {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2em;
+    .navbar{
+      display: none;
+    }
+  }
+}
+
+.left{
+  .web3-iamge{
+    background-image: url(./assets/images/image-web-3-mobile.jpg);
+    width: 100%;
+    height: 20rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-top: 2em;
+  }
+  .heading{
+    h1{
+      font-size: 2.8rem;
+      padding-top: .4em;
+    }
+    p{
+      color: var(--Dark-grayish-blue);
+      margin-bottom: 1.5em;
+    }
+    button{
+      padding: 10px 20px;
+      width: 14em;
+      height: 3.5em;
+      color: var(--Off-white);
+      background-color: var(--Soft-red);
+      border: none;
+      letter-spacing: .2em;
+      cursor: pointer;
+      &:hover{
+        background-color: var(--Very-dark-blue);
+      }
+    }
+  }
+}
+
+// middle new bg-blue
+.right{
+  width: 100%;
+  margin: 2em 0;
+  padding: 1.5em 1em;
+  background-color: var(--Very-dark-blue);
+  h3{
+    color: var(--Soft-orange);
+    font-size: 1.5rem;
+  }
+  .title{
+    color: var(--Off-white);
+    margin: .5em 0;
+    cursor: pointer;
+    &:hover{
+      color: var(--Soft-orange);
+    }
+  }
+  .explain{
+    color: var(--Grayish-blue);
+  }
+  hr{
+    margin: 2em 0;
+  }
+}
+
+// 3 news
+footer{
+  .parent {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr;
+    grid-column-gap: 20px;
+    grid-row-gap: 0px;
+    margin-bottom: 1.5em;
+    }
+    .div1 { 
+      grid-area: 1 / 1 / 2 / 2;
+      background-size: cover;
+      margin: .3em 2em 0.3em 0;
+     }
+    .div2 {
+       grid-area: 1 / 2 / 2 / 3;
+       display: grid;
+       grid-template-columns: 1fr;
+       grid-template-rows: repeat(3, 1fr);
+       grid-column-gap: 0px;
+       grid-row-gap: 0px; 
+      }
+      .number {
+         grid-area: 1 / 1 / 2 / 2;
+         color: var(--Grayish-blue);
+         font-weight: 700;
+         font-size: 1.5rem;
+         }
+      .name { 
+        grid-area: 2 / 1 / 3 / 2;
+        color: var(--Very-dark-blue);
+        font-weight: 800;
+        font-size: 1rem;
+        cursor: pointer;
+        &:hover{
+          color: var(--Soft-red);
+        }
+       }
+      .description {
+         grid-area: 3 / 1 / 4 / 2;
+         color: var(--Grayish-blue);
+         }
+  .pc-image{
+    background-image: url(./assets/images/image-retro-pcs.jpg);
+  }
+  .laptop-image{
+    background-image: url(./assets/images/image-top-laptops.jpg);
+  }
+  .gaming-image{
+    background-image: url(./assets/images/image-gaming-growth.jpg);
+  }
+}
+
+.attribution {
+   font-size: 11px; text-align: center; 
+  }
+.attribution a { 
+  color: hsl(228, 45%, 44%);
+ }
+
+ // Responsive mobile-first design
+ @media only screen and (min-width: 768px) {
+    header{
+      .flex{
+        .icon-menu{
+          display: none;
+        }
+        .navbar{
+          display: block;
+          a {
+            color: var(--Grayish-blue);
+            text-decoration: none;
+            cursor: pointer;
+            margin-right: 2em;
+            &:hover{
+              color: var(--Soft-red);
+            }
+          }
+        }
+      }
+    }
+    main{
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      grid-template-rows: 1fr;
+      grid-column-gap: 20px;
+      grid-row-gap: 0px;
+      .left { 
+        grid-area: 1 / 1 / 2 / 2;
+        .heading{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          h1, 
+          .text{
+            flex-basis: 100%;
+          }
+          .text{
+            margin-top: 2em;
+          }
+        }
+       }
+      .right { grid-area: 1 / 2 / 2 / 3; }
+    }
+    footer{
+      margin-top: 2em;
+      display: flex;
+      .parent {
+        display: grid;
+        grid-template-columns: 1fr 4fr;
+        grid-column-gap: 0px;
+        }
+        .div1 { 
+          background-size: contain;
+          background-repeat: no-repeat;
+         }
+    }
+ }
